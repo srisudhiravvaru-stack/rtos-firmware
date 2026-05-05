@@ -5,7 +5,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![C Standard](https://img.shields.io/badge/C-C11-blue)](CMakeLists.txt)
 
-Production-grade embedded firmware for ARM Cortex-M4 microcontrollers using FreeRTOS. Designed for industrial sensor acquisition, real-time control loops, and reliable field communication — with safety-critical best practices throughout.
+Production-grade embedded firmware for ARM Cortex-M4 microcontrollers using FreeRTOS. Designed for industrial sensor acquisition, real-time control loops, and reliable field communication with safety-critical best practices throughout.
 
 ---
 
