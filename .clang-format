@@ -1,0 +1,92 @@
+# =============================================================================
+# .clang-format
+# Industrial Embedded C Code Style
+#
+# Follows MISRA-C:2012 layout conventions with Allman brace style.
+# Compatible with clang-format 14+
+# Usage: clang-format -i --style=file <file.c>
+# =============================================================================
+
+Language:        Cpp
+BasedOnStyle:    LLVM
+
+# --- Indentation ---
+IndentWidth:              4
+TabWidth:                 4
+UseTab:                   Never
+ContinuationIndentWidth:  4
+IndentCaseLabels:         true
+IndentPPDirectives:       BeforeHash
+
+# --- Braces: Allman style (braces on their own line) ---
+BreakBeforeBraces:        Allman
+
+# --- Line length ---
+ColumnLimit:              100
+
+# --- Alignment ---
+AlignAfterOpenBracket:          Align
+AlignConsecutiveAssignments:
+  Enabled:          true
+  AcrossEmptyLines: false
+  AcrossComments:   false
+AlignConsecutiveDeclarations:
+  Enabled:          true
+  AcrossEmptyLines: false
+  AcrossComments:   false
+AlignConsecutiveMacros:
+  Enabled:          true
+  AcrossEmptyLines: false
+  AcrossComments:   true
+AlignEscapedNewlines:           Right
+AlignOperands:                  Align
+AlignTrailingComments:          true
+
+# --- Spacing ---
+SpaceBeforeParens:              ControlStatements
+SpaceInEmptyParentheses:        false
+SpacesInParentheses:            false
+SpacesInSquareBrackets:         false
+SpaceAfterCStyleCast:           false
+SpaceBeforeAssignmentOperators: true
+SpaceBeforeSquareBrackets:      false
+SpaceAroundPointerQualifiers:   Default
+
+# Pointer alignment: align '*' with variable name (embedded convention)
+PointerAlignment:               Right
+
+# --- Functions ---
+AllowShortFunctionsOnASingleLine:  None
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortLoopsOnASingleLine:      false
+AllowShortBlocksOnASingleLine:     Never
+AllowShortCaseLabelsOnASingleLine: false
+
+# --- Includes ---
+SortIncludes:              CaseSensitive
+IncludeBlocks:             Regroup
+IncludeCategories:
+  # System headers first
+  - Regex:           '^<[a-z_]+\.h>'
+    Priority:        1
+  # FreeRTOS headers
+  - Regex:           '^"FreeRTOS'
+    Priority:        2
+  # Local project headers
+  - Regex:           '^"'
+    Priority:        3
+
+# --- Comments ---
+ReflowComments:            true
+SpacesBeforeTrailingComments: 2
+
+# --- Misc ---
+MaxEmptyLinesToKeep:       2
+KeepEmptyLinesAtTheStartOfBlocks: false
+BreakBeforeBinaryOperators: None
+BinPackArguments:          false
+BinPackParameters:         false
+
+# Penalty tuning for line breaks
+PenaltyBreakBeforeFirstCallParameter: 1000
+PenaltyReturnTypeOnItsOwnLine:        200

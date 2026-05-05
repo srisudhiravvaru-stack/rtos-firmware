@@ -1,0 +1,102 @@
+# =============================================================================
+# docs/doxygen/Doxyfile
+# Doxygen configuration for industrial RTOS firmware documentation
+# Generate: doxygen docs/doxygen/Doxyfile
+# Output:   docs/html/index.html
+# =============================================================================
+
+#---------------------------------------------------------------------------
+# Project information
+#---------------------------------------------------------------------------
+PROJECT_NAME           = "Industrial RTOS Firmware"
+PROJECT_NUMBER         = 1.0.0
+PROJECT_BRIEF          = "ARM Cortex-M4 FreeRTOS Firmware - Safety Critical"
+PROJECT_LOGO           = docs/doxygen/logo.png
+OUTPUT_DIRECTORY       = docs
+
+#---------------------------------------------------------------------------
+# Build related
+#---------------------------------------------------------------------------
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = NO
+EXTRACT_STATIC         = YES
+EXTRACT_LOCAL_CLASSES  = YES
+HIDE_UNDOC_MEMBERS     = NO
+SHOW_INCLUDE_FILES     = YES
+SHOW_USED_FILES        = YES
+SORT_MEMBERS_CTORS_1ST = YES
+GENERATE_TODOLIST      = YES
+GENERATE_BUGLIST       = YES
+GENERATE_DEPRECATEDLIST= YES
+
+#---------------------------------------------------------------------------
+# Input
+#---------------------------------------------------------------------------
+INPUT                  = src include drivers README.md
+FILE_PATTERNS          = *.c *.h *.md
+RECURSIVE              = YES
+EXCLUDE                = middlewares tests build
+EXCLUDE_PATTERNS       = */CMakeFiles/* */.git/*
+USE_MDFILE_AS_MAINPAGE = README.md
+
+#---------------------------------------------------------------------------
+# Source browser
+#---------------------------------------------------------------------------
+SOURCE_BROWSER         = YES
+INLINE_SOURCES         = NO
+STRIP_CODE_COMMENTS    = NO
+REFERENCED_BY_RELATION = YES
+REFERENCES_RELATION    = YES
+
+#---------------------------------------------------------------------------
+# HTML output
+#---------------------------------------------------------------------------
+GENERATE_HTML          = YES
+HTML_OUTPUT            = html
+HTML_EXTRA_STYLESHEET  =
+HTML_TIMESTAMP         = YES
+GENERATE_TREEVIEW      = YES
+TREEVIEW_WIDTH         = 280
+FULL_SIDEBAR           = NO
+
+#---------------------------------------------------------------------------
+# LaTeX / PDF output (optional)
+#---------------------------------------------------------------------------
+GENERATE_LATEX         = NO
+
+#---------------------------------------------------------------------------
+# Preprocessor (needed to parse FreeRTOS macros correctly)
+#---------------------------------------------------------------------------
+ENABLE_PREPROCESSING   = YES
+MACRO_EXPANSION        = YES
+EXPAND_ONLY_PREDEF     = NO
+PREDEFINED             = \
+    configSUPPORT_STATIC_ALLOCATION=1 \
+    configUSE_MUTEXES=1 \
+    __attribute__(x)=
+
+#---------------------------------------------------------------------------
+# Graphs (requires Graphviz/dot installed)
+#---------------------------------------------------------------------------
+HAVE_DOT               = YES
+DOT_NUM_THREADS        = 4
+CLASS_GRAPH            = YES
+COLLABORATION_GRAPH    = YES
+INCLUDE_GRAPH          = YES
+INCLUDED_BY_GRAPH      = YES
+CALL_GRAPH             = YES
+CALLER_GRAPH           = YES
+GRAPHICAL_HIERARCHY    = YES
+DIRECTORY_GRAPH        = YES
+DOT_IMAGE_FORMAT       = svg
+INTERACTIVE_SVG        = YES
+
+#---------------------------------------------------------------------------
+# Warnings
+#---------------------------------------------------------------------------
+QUIET                  = NO
+WARNINGS               = YES
+WARN_IF_UNDOCUMENTED   = YES
+WARN_IF_DOC_ERROR      = YES
+WARN_NO_PARAMDOC       = YES
+WARN_LOGFILE           = docs/doxygen-warnings.log
