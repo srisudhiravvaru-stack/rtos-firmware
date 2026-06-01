@@ -1,6 +1,6 @@
 # Industrial RTOS Firmware
 
-[![CI](https://github.com/your-org/rtos-firmware/actions/workflows/ci.yml/badge.svg)](https://github.com/your-org/rtos-firmware/actions)
+[![CI](https://github.com/srisudhiravvaru-stack/rtos-firmware/actions/workflows/ci.yml/badge.svg)](https://github.com/your-org/rtos-firmware/actions)
 [![Docs](https://img.shields.io/badge/docs-Doxygen-blue)](https://your-org.github.io/rtos-firmware)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![C Standard](https://img.shields.io/badge/C-C11-blue)](CMakeLists.txt)
